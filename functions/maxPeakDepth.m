@@ -1,4 +1,4 @@
-function [maxPeak,minValley] = extremosPeakValley(data)
+function [maxPeak,minValley] = maxPeakDepth(data)
 max = data(1);
 min = data(1);
 
