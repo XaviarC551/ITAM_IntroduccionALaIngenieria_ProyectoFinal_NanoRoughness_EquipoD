@@ -1,0 +1,6 @@
+AMF = imread('img/Imagen4AMFFinal.gif');
+AMF3 = cat(3,AMF,AMF,AMF);
+AMF3(:,,) = 0;
+AMF3(,,) = 0;
+AMF3(,,) = 255;
+imshow(AMF3);
