@@ -1,4 +1,4 @@
-function[Rq]=RootMeansSquare(data)
+function[Rq]=rootMeansSquare(data)
 z = mean(data);
 n = lenght(data);
 sum = 0;
