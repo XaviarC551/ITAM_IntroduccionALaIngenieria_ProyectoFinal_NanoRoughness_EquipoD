@@ -1,5 +1,5 @@
 function [rz] = avrg_profile(data, p, v)
-    sorted=sort(data);
+cl    sorted=sort(data);
     s=0;
     l=length(sorted)
     for i=0:p-1

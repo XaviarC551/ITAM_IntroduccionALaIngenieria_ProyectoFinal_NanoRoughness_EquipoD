@@ -3,7 +3,7 @@ n=length(data);
 ra=0;
 for i=1:n
    x=data(i);
-   Ra=Ra+(x-mean(data));
+   ra=ra+(x-mean(data));
 end
-ra=(ra/n);
+ra=abs(ra/n);
 end
