@@ -45,8 +45,8 @@ for i=0:(randi(137))
     end  
     
     datos(i+1) = AMF(y+dirY*i,x+dirX*i);
-    x=x+dirX*i;
-    y=y+dirY*i;
+    fx=x+dirX*i;
+    fy=y+dirY*i;
 end
 xg = 1:length(datos);
 yg = datos;
