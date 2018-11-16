@@ -82,7 +82,6 @@ while ~ended
             z=mean(data)
             plot([1, length(data)],[z, z],'r')
             grid on
-            showFunctions(data)
         case 2
             close all;
             figure('Name','Original Image')
