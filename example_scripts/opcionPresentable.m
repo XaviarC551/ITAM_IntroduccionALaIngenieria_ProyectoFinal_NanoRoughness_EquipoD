@@ -154,6 +154,7 @@ while ~ended
             plot([1, length(data)],[z, z],'r')
             grid on
             showFunctions(data)
+            
         end
 end
 clear;clc;close all
