@@ -1,5 +1,5 @@
 function inputLayout(file)
-   hs = build(200,500);
+   hs = build(150,500);
    hs.fig.Visible = 'on';
    function hs = build(height,width)
        hs.fig = figure('Visible','off',...
