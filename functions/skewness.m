@@ -1,4 +1,6 @@
-function [rsk]=skewness(data)
+% Esta función obtiene la asimetría de los datos
+function [rsk] = skewness(data)
+    rsk=0;
     rq=rootMeansSquare(data)^3;
     zm=mean(data);
     z=0;
@@ -6,5 +8,6 @@ function [rsk]=skewness(data)
     for i=1:n
         z=z+(data(i)-zm)^3;
     end
-    rsk=z/(n*rq);
+    if n*rq~=0
+        rsk=z/(n*rq);
 end

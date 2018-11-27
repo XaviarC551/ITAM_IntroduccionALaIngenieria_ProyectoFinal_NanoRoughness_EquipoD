@@ -1,4 +1,4 @@
-function [] = showFunctions(data)
+function showFunctions(data)
     text(1,250,char("Z="+num2str(mean(data))))
     text(1,230,char("Ra="+num2str(roughness(data))))
     text(1,210,char("Rq="+num2str(rootMeansSquare(data))))

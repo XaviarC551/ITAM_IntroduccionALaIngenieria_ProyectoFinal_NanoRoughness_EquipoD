@@ -1,31 +1,45 @@
+% En esta vista, el usuario selecciona el archivo que se desea analizar
 function fileLayout()
-   hs = build(100,500);
-   hs.fig.Visible = 'on';
-   function hs = build(height,width)
-       hs.fig = figure('Visible','off',...
+    % construir la ventana
+    hs = build(100,500);
+    % mostrar la 'figura' de la ventana
+    hs.fig.Visible = 'on';
+    % -------------------------subfunciones--------------------------------
+    % "build":
+    % agrega los componentes de GUIDE a la 'figura' de la ventana y da como
+    % resultado todos estos en una estructura de datos
+    function hs = build(height,width)
+        hs.fig = figure('Visible','off',...
                   'Resize','off',...
                   'Tag','fig',...
                   'Position',[200 200 width height]);
-       hs.txtbox = uicontrol(hs.fig,'Style','edit',...
+        % agregar la caja de texto
+        hs.fileNameTxtbox = uicontrol(hs.fig,'Style','edit',...
                 'String','Enter the name of your file',...
                 'Position',[width/2-100 50 200 20]);
-       hs.btn = uicontrol(hs.fig,...
+        % agregar el botón de aceptar
+        hs.btn = uicontrol(hs.fig,...
                   'String','Submit',...
                   'Tag','button',...
                   'Callback',@buttonCallback,...
                   'Position',[width/2-100 10 200 30]);
-       hs.btn.Visible='on';
+        hs.btn.Visible='on';
     end   
-
-   function buttonCallback(hObject,event)
+    % "buttonCallback":
+    % esta función es llamada cada vez que el botón de la ventana es
+    % presionado
+    function buttonCallback(hObject,event)
         if(strcmp(hObject.Tag,'button'))
-            filename=hs.txtbox.String;
-            if isfile("img/"+filename)
+            filename = hs.fileNameTxtbox.String;
+            if isfile("img/" + filename)
                 close all
-                img=imread(char("img/"+filename));
-                img=img(:,:,1);
+                % leer la imagen del MFA
+                img = imread(char("img/"+filename));
+                % usar solo el primer canal de la imagen
+                img = img(:, :, 1);
+                % abrir la vista principal
                 mainLayout(1,img);
             end
         end
-   end
+    end
 end

@@ -1,3 +1,4 @@
+% Esta función obtiene la media de los datos proporcionados
 function [z] = mean(data)
     n=length(data);
     z=0;
